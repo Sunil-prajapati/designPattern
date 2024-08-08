@@ -1,19 +1,15 @@
-import SplitScreen from "./SplitScreen";
+import Users from "./Users";
+import withLoader from "./withLoader";
 
-const LeftHandComponent = ({ name }) => {
-  return <h1 style={{ backgroundColor: "ButtonFace" }}>Left hand {name}</h1>;
-};
+const UserWithLoader = withLoader(Users);
 
-const RightHandComponent = ({ message }) => {
-  return <h2 style={{ backgroundColor: "green" }}>Right hand {message}</h2>;
-};
 function App() {
   return (
     <>
-      <SplitScreen leftWeight={1} rightWeight={3}>
-        <LeftHandComponent name="Developer" />
-        <RightHandComponent message="good for u!" />
-      </SplitScreen>
+      <h1> HOC: THAT RETURN ANOTHER COMPONENT</h1>
+      <h2>Sharing behavior between components</h2>
+      <h2>Adding extra functionality to the existing component </h2>
+      <UserWithLoader />
     </>
   );
 }
