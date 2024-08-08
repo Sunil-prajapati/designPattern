@@ -1,7 +1,13 @@
+import ListLayout from "./ListLayout";
 import SplitScreen from "./SplitScreen";
 
-const LeftHandComponent = ({ name }) => {
-  return <h1 style={{ backgroundColor: "ButtonFace" }}>Left hand {name}</h1>;
+const LeftHandComponent = ({ name, children }) => {
+  return (
+    <>
+      <h1 style={{ backgroundColor: "ButtonFace" }}>Left hand {name}</h1>
+      {children}
+    </>
+  );
 };
 
 const RightHandComponent = ({ message }) => {
@@ -10,8 +16,8 @@ const RightHandComponent = ({ message }) => {
 function App() {
   return (
     <>
-      <SplitScreen leftWeight={1} rightWeight={3}>
-        <LeftHandComponent name="Developer" />
+      <SplitScreen leftWeight={1} rightWeight={1}>
+        <LeftHandComponent name="Developer">{<ListLayout />}</LeftHandComponent>
         <RightHandComponent message="good for u!" />
       </SplitScreen>
     </>
