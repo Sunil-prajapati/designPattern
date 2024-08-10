@@ -1,6 +1,6 @@
-const Users = () => {
+const Users = (props) => {
   const user = {
-    name: "John Doe",
+    name: props?.name,
     age: 30,
     email: "john.doe@example.com",
   };

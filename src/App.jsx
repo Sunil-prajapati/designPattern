@@ -1,7 +1,9 @@
 import Users from "./Users";
+import ClickCounter from "./components/ClickCounter";
+import HoverCounter from "./components/HoverCounter";
 import withLoader from "./withLoader";
 
-const UserWithLoader = withLoader(Users);
+const UserWithLoader = withLoader(Users, "name from prop");
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <h2>Sharing behavior between components</h2>
       <h2>Adding extra functionality to the existing component </h2>
       <UserWithLoader />
+      <ClickCounter />
+      <HoverCounter />
     </>
   );
 }

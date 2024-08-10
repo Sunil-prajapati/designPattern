@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const withLoader = (WrappedComponent) => {
+const withLoader = (WrappedComponent, name) => {
   return (props) => {
     const [loading, setLoading] = useState(true);
     setTimeout(() => {
@@ -8,7 +8,13 @@ const withLoader = (WrappedComponent) => {
     }, 2000);
 
     return (
-      <div>{loading ? <p>loading ..</p> : <WrappedComponent {...props} />}</div>
+      <div>
+        {loading ? (
+          <p>loading ..</p>
+        ) : (
+          <WrappedComponent {...props} name={name} />
+        )}
+      </div>
     );
   };
 };
